@@ -1,0 +1,6 @@
+.textAfterInfo {
+    margin-bottom: 40px;
+    table {
+        @include table;
+    }
+}

@@ -1,0 +1,34 @@
+.paymentHeader {
+    box-shadow: 0px 0px 20px 5px rgb(252 147 147 / 59%);
+    border-left: 0;
+    border-right: 0;
+    overflow: auto;
+    white-space: nowrap;
+    >.wrapperContent {
+        margin-top: 20px;
+    }
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 10px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px #FFEEED;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $primary-color;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $primary-color-hover;
+    }
+    a {
+        padding: 10px 15px 8px;
+        border-bottom: 2px solid transparent;
+        transition: border $anim-speed;
+        &:hover {
+            color: $primary-color-hover;
+            border-bottom: 2px solid $primary-color-hover;
+        }
+    }
+}

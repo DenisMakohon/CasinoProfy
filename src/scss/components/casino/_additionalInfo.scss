@@ -1,0 +1,40 @@
+.additionalInfo {
+    margin-bottom: 0;
+    .smallCards {
+        &-img {
+            width: 46px;
+            height: 34px;
+            padding: 0;
+            img {
+                max-height: 100%;
+            }
+        }
+        ul {
+            max-height: 225px;
+            overflow: auto;
+        }
+        &-title {
+            a {
+                width: 100%;
+            }
+        }
+        .smallCards-logo {
+            width: auto;
+            height: auto;
+        }
+        .check-icon {
+            width: 25px;
+        }
+        a span {
+            transition: color $anim-speed;
+        }
+        a:hover span {
+            color: $primary-color-hover!important;
+        }
+    }
+    &-games {
+        .smallCards-img {
+            padding: 0 11px;
+        }
+    }
+}

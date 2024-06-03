@@ -1,0 +1,168 @@
+.more {
+    &-arrow {
+        pointer-events: all;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        .text {
+            @include tiny($regular, $title-font);
+        }
+        img {
+            transform: rotate(180deg);
+            transition: transform $anim-speed;
+            margin-right: 12px;
+        }
+        &.open {
+            img {
+                transform: rotate(0);
+            }
+        }
+        &-container {
+            position: relative;
+            z-index: 9999;
+            padding: 0;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+    &-info {
+        background: white;
+        width: calc(100% - 35px);
+        padding: 0 0 0;
+        margin: 40px 10px 0 auto;
+        display: flex;
+        transform: translateY(-25px);
+        @media screen and (max-width: $breakpoint-md) {
+            width: 100%;
+            padding: 20px 0 0;
+            margin-top: 0;
+            transform: translateY(0);
+            margin: {
+                right: 0;
+                left: 0;
+            }
+        }
+        &-part {
+            margin-bottom: 24px;
+            @media screen and (max-width: $breakpoint-md) {
+                margin-bottom: 20px;
+            }
+        }
+        .text {
+            margin-bottom: 10px;
+            font: $semi-bold 1.6rem $title-font;
+        }
+        >div:not(.more-info-btns) {
+            width: 33%;
+            padding: 0 15px;
+            @media screen and (max-width: $breakpoint-md) {
+                width: 100%;
+                padding: 0;
+            }
+        }
+        .depositRow {
+            >div {
+                width: calc(50% - 15px);
+                @media screen and (max-width: $breakpoint-mobile) {
+                    width: calc(50% - 5px);
+                }
+            }
+        }
+        &-btns {
+            width: 100%;
+            margin-top: 18px;
+            @media screen and (max-width: $breakpoint-md) {
+                margin-top: 0;
+            }
+            @media screen and (max-width: $breakpoint-mobile) {
+                padding: 0 15px;
+            }
+            .btn {
+                width: auto;
+                &:not(.btn-red-line) {
+                    @media screen and (max-width: $breakpoint-mobile) {
+                        margin-bottom: 20px;
+                    }
+                    @media screen and (min-width: $breakpoint-mobile + 1) {
+                        margin-right: 30px;
+                    }
+                }
+            }
+            >* {
+                min-width: 165px;
+            }
+        }
+        .flag,
+        .platform {
+            width: auto;
+            height: 14px;
+        }
+    }
+}
+
+.grayBgBlock {
+    &-square {
+        min-width: 42px;
+        height: 42px;
+        &:hover {
+            .grayBgBlock-link-icon {
+                img.no-hover {
+                    opacity: 0;
+                }
+                img.hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &-half {
+        .grayBgBlock {
+            margin: {
+                bottom: 10px;
+                right: 10px;
+            }
+            display: inline-flex;
+            align-items: center;
+        }
+    }
+    &-link-icon {
+        position: relative;
+        // margin-right: 10px;
+        +*:not(:empty) {
+            margin: {
+                left: 10px;
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        img {
+            transition: opacity $anim-speed;
+            &.hover {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 9;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+.currencies {
+    margin-right: -10px;
+    li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.moreItem {
+    @media screen and (max-width: $breakpoint-md) {
+        // padding-bottom: 30px;
+    }
+}

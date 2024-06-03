@@ -1,0 +1,34 @@
+.edit-post-visual-editor .editor-post-title__block,
+.wp-block {
+    max-width: 100%;
+    width: 100%;
+}
+
+.edit-post-visual-editor.editor-styles-wrapper {
+    min-height: 100%;
+    overflow: auto;
+    flex: 1;
+}
+
+#wp-link .query-results {
+    height: 180px;
+    margin-top: 55px;
+}
+
+.meta-box-sortables {
+    display: flex;
+    flex-direction: column;
+}
+
+.postbox.acf-postbox {
+    order: 2;
+}
+
+.postbox.yoast.wpseo-metabox {
+    order: 1;
+    display: inline-block;
+}
+
+#autor_metabox {
+    order: 3;
+}

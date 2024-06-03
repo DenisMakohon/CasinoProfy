@@ -1,0 +1,26 @@
+.gameFeauters.bonusSlider {
+    &-control h5 {
+        padding: 0 20px 10px;
+        margin: 0;
+        &::before {
+            display: none;
+        }
+    }
+    div {
+        clear: none !important;
+    }
+    .bonusSlider {
+        &-item {
+            background: white;
+        }
+        &-title {
+            @include heading(2);
+            margin-bottom: 10px;
+            width: 100%;
+            @media screen and (max-width: $breakpoint-mobile) {
+                @include heading(4);
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

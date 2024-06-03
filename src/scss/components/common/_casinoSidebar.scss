@@ -1,0 +1,358 @@
+.wrapperContent {
+    display: flex;
+    justify-content: center;
+}
+
+.allContent {
+    position: relative;
+    //width: 64%;
+    left: 0px;
+    // margin: 0 20px;
+    @media screen and (max-width: $breakpoint-lg) {
+        width: 100%;
+    }
+}
+
+.casinoSidebar {
+    position: sticky;
+    top: 115px;
+    width: 220px;
+    margin-top: 40px;
+    background: #fff;
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    @media screen and (max-width: $breakpoint-xl-small) {
+        display: none;
+    }
+    @media screen and (max-height: $breakpoint-height-md) {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 388px !important;
+    }
+}
+
+.casinoSidebar {
+    scrollbar-width: thin;
+    scrollbar-color: #8a8a8a $gray-light;
+}
+
+
+/* Работает в Chrome, Edge и Safari */
+
+.casinoSidebar::-webkit-scrollbar {
+    width: 3px;
+}
+
+.casinoSidebar::-webkit-scrollbar-track {
+    background: $gray-light;
+}
+
+.casinoSidebar::-webkit-scrollbar-thumb {
+    background-color: #8a8a8a;
+    border-radius: 20px;
+}
+
+.casinoOfTheMonth {
+    margin-left: -222px;
+    height: fit-content;
+    color: white;
+    padding: 24px 16px;
+    &-item--wrap-block {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        img {
+            border-radius: 10px;
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            min-width: 64px;
+        }
+    }
+    &-item--img-block {
+        margin-right: 8px;
+        display: flex;
+    }
+    &-title {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        font-family: $title-font;
+        color: $primary-text;
+    }
+    &-item-bonus-wrap {
+        padding: 12px 10px;
+        background: #F4F4F4;
+        border: 1px solid #EDECEC;
+        border-radius: 10px;
+        margin-bottom: 16px;
+    }
+    &-bonus {
+        font-family: $paragraph-font;
+        color: $primary-text;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        overflow-wrap: anywhere;
+        p {
+            font-family: $paragraph-font;
+            color: $primary-text;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 21px;
+            text-align: center;
+        }
+    }
+    &-btn-wrap {
+        display: flex;
+        width: 188px;
+        height: 40px;
+        margin-bottom: 16px;
+        a {
+            width: 100%;
+        }
+    }
+    &-item-t_c-wrap {
+        margin-bottom: 16px;
+        .casinoOfTheMonth-bonus-t_c {
+            font-family: $paragraph-font;
+            color: $primary-text;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 16px;
+            a {
+                font-family: $paragraph-font;
+                color: #E4322B;
+                font-weight: 400;
+                font-size: 11px;
+                line-height: 16px;
+                text-decoration: underline;
+            }
+        }
+    }
+    &-banner-wrap {
+        display: flex;
+    }
+    &-mob-wrap {
+        position: fixed;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.07);
+        width: 90%;
+        height: auto;
+        z-index: 99;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        @media screen and (min-width: $breakpoint-xl-small + 1) {
+            display: none;
+        }
+        @media screen and (max-width: $breakpoint-lg) {
+            bottom: 83px;
+        }
+        .casinoOfTheMonth-item--wrap-block img {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+        }
+        .casinoOfTheMonth-item--wrap-block {
+            margin-bottom: 0;
+        }
+        .casinoOfTheMonth-btn-wrap {
+            margin-bottom: 0;
+            width: 152px;
+            min-width: 130px;
+        }
+        .casinoOfTheMonth-item--img-block {
+            min-width: 48px;
+            height: 48px;
+        }
+        .casinoOfTheMonth-bonus {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: $primary-text;
+            font-family: $paragraph-font;
+            margin-right: 10px;
+            overflow-wrap: anywhere;
+            p {
+                text-align: left;
+                font-weight: 400;
+            }
+            b,
+            strong {
+                font-weight: 700;
+            }
+        }
+    }
+    &-banner-wrap {
+        width: 188px;
+        height: 88px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+    }
+    &-banner-title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 16px;
+        font-family: $title-font;
+        color: $white-gray;
+    }
+    &-banner {
+        width: 55px;
+        height: 88px;
+        margin-right: 10px;
+    }
+}
+
+.casinoOfTheMonth-extra-mob-wrap-div {
+    position: fixed;
+    bottom: 85px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    z-index: 99;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (min-width: $breakpoint-xl-small + 1) {
+        display: none;
+    }
+    .close-btn-mobile-banner {
+        position: absolute;
+        right: 2px;
+        top: 3px;
+        z-index: 100;
+    }
+}
+
+a.casinoOfTheMonth-extra-mob-wrap {
+    position: static;
+    bottom: 85px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    height: auto;
+    background: #298C4B;
+    box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 8px;
+    @media screen and (min-width: $breakpoint-xl-small) {
+        display: none;
+    }
+    .casinoOfTheMonth-item--wrap-block img {
+        width: 70px;
+        height: 70px;
+    }
+    .casinoOfTheMonth-item--wrap-block {
+        margin-bottom: 0;
+        display: contents;
+    }
+    .casinoOfTheMonth-btn-wrap {
+        margin-bottom: 0;
+        width: 152px;
+    }
+    .casinoOfTheMonth-title {
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 27px;
+        font-family: $title-font;
+        color: $white-gray;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .casinoOfTheMonth-item--img-block {
+        display: contents;
+    }
+    img.casinoOfTheMonth-banner {
+        width: 70px;
+        height: 56px;
+    }
+}
+
+.casinoOfTheMonth-extra-mob-wrap-div.hidden {
+    display: none;
+}
+
+.tableOfContents {
+    margin-right: -230px;
+    width: 225px;
+    height: fit-content;
+    color: white;
+    padding: 24px 16px;
+    &-title {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 700;
+        font-family: $title-font;
+        color: $primary-text;
+        margin-bottom: 12px;
+        overflow-wrap: anywhere;
+        @media screen and (max-width: $breakpoint-xl-small) {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 150%;
+            color: $white-gray;
+            margin-left: -20px;
+        }
+    }
+    ul {
+        width: 160px;
+        padding-left: 22px;
+    }
+    li {
+        list-style-type: none;
+        position: relative;
+        &::before {
+            content: '•';
+            position: absolute;
+            top: 1px;
+            left: -17px;
+        }
+        a {
+            font-size: 12px;
+            line-height: 16.34px;
+            font-weight: 400;
+            font-family: $paragraph-font;
+            color: $primary-text;
+            transition: .3s;
+            @media screen and (max-width: $breakpoint-lg) {
+                font-family: $paragraph-font;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                line-height: 20px;
+                color: $white-gray;
+            }
+            &:hover {
+                color: #E4322B;
+                text-decoration: underline;
+                transition: .3s;
+            }
+        }
+        a.current {
+            color: #E4322B;
+        }
+    }
+}

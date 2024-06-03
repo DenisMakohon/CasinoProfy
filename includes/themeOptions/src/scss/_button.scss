@@ -1,0 +1,89 @@
+.wp-core-ui {
+    .btn {
+        position: relative!important;
+        top: 0;
+        left: 0;
+        font-size: 16px!important;
+        padding: 6px 32px;
+        color: white;
+    }
+    .button {
+        &,
+        &.button-primary {
+            padding: 5px 20px;
+            background-color: $primary-color;
+            border-color: $primary-color;
+            color: white;
+            transition: background $anim-speed;
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $primary-color-hover;
+                border-color: $primary-color-hover;
+                color: white;
+            }
+            &:focus {
+                box-shadow: 0 0 0 1px $primary-color-hover, 0 0 0 3px $secondary-color;
+            }
+            &.red {
+                background-color: $error;
+                border-color: $error;
+                display: inline-block;
+            }
+        }
+        &.red,
+        &.remove_image_button {
+            &,
+            &:hover {
+                background: $error;
+                border-color: $error;
+                color: white;
+            }
+        }
+    }
+}
+
+.media_img-btns {
+    margin-top: 25px;
+}
+
+.bottom-line-btns {
+    margin-top: 25px;
+}
+
+// .button {
+//     &.button-primary {
+//         padding: 5px 15px;
+//         font-size: 16px;
+//         background: $primary-color;
+//         border-radius: 5px;
+//         transition: background $anim-speed;
+//         &.red {
+//             background-color: red;
+//             border-color: red;
+//             display: inline-block;
+//         }
+//         &:focus,
+//         &:active {
+//             background: $primary-color-hover;
+//             box-shadow: 0 0 0 1px $primary-color-hover, 0 0 0 3px $secondary-color;
+//         }
+//         &:hover {
+//             background: $primary-color-hover;
+//         }
+//     }
+//     &.red,
+//     &.red:hover {
+//         background: rgb(255, 74, 74);
+//         border-color: rgb(255, 74, 74);
+//         color: white;
+//     }
+// }
+.plashka-item .button.red,
+.payment-item .button.red {
+    margin: 15px 15px auto auto;
+}
+
+.js-payment_methods .button.red {
+    margin-bottom: 25px;
+}

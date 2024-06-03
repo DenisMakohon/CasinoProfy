@@ -1,0 +1,222 @@
+.casinoFilter {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    background: white url(../images/filter_bg.svg) right bottom no-repeat;
+    background-size: contain;
+    .currency_alert {
+        width: 100%;
+    }
+    .slick {
+        &-list {
+            transition: height .2s;
+        }
+        &-initialized .slick-slide {
+            overflow: hidden;
+        }
+        &-slide {
+            height: auto;
+        }
+    }
+    .extendTitle {
+        &-title {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        &-content-title {
+            font-size: 2rem;
+            cursor: auto;
+            span {
+                color: $primary-color;
+            }
+        }
+    }
+    .container {
+        margin: 0;
+    }
+    .disable {
+        opacity: .5;
+        pointer-events: none;
+    }
+    label {
+        cursor: pointer;
+        background: #FFFFFF;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+        padding: 17px;
+        transition: background $anim-speed;
+        width: calc( 20% - 20px);
+        margin: {
+            right: 20px;
+            bottom: 20px;
+        }
+        @media screen and (max-width: 1230px) {
+            margin: {
+                right: 15px;
+                bottom: 15px;
+            }
+            width: calc( 20% - 15px);
+        }
+        @media screen and (max-width: $breakpoint-lg) {
+            width: calc( 33.3% - 15px);
+        }
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: calc( 50% - 15px);
+        }
+        // @media screen and (max-width: $breakpoint-small-mb-xs) {
+        //     width: 100%;
+        //     margin-right: 0;
+        // }
+        &:hover {
+            background: #F5F5F5;
+        }
+    }
+    .title-line {
+        @include heading(2);
+    }
+    &-block {
+        margin-right: -20px;
+        width: calc( 100% + 20px);
+        padding: 15px;
+        @media screen and (max-width: 1230px) {
+            margin-right: -15px;
+            width: calc( 100% + 15px);
+        }
+        // @media screen and (max-width: $breakpoint-small-mb-xs) {
+        //     width: 100%;
+        //     margin-right: 0;
+        // }
+        p {
+            font-weight: $bold;
+        }
+    }
+    &-payment_methods {
+        &-img {
+            height: 50px;
+        }
+        img {
+            max-height: 50px;
+            width: auto;
+        }
+        input[type="checknbox"] {
+            margin-right: 10px;
+        }
+    }
+    &-bonus_on_top {
+        .checkbox-container {
+            margin-top: 5px;
+        }
+        label {
+            padding: 30px 20px;
+        }
+        img {
+            height: 70px!important;
+            width: auto;
+            margin-bottom: 19px;
+        }
+    }
+    input[type="checkbox"] {
+        &:checked {
+            ~.checkbox-container,
+            ~div .checkbox-container {
+                border-color: $primary-color;
+                background: $primary-color;
+                &::before {}
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    &-controls {
+        pointer-events: none;
+        >* {
+            transition: opacity $anim-speed;
+            pointer-events: all;
+            @media screen and (max-width: $breakpoint-small-mb-xs) {
+                &:nth-child(2) {
+                    margin: 25px auto;
+                }
+            }
+        }
+        &Reset {
+            display: none;
+        }
+        @media screen and (max-width: $breakpoint-small-mb-xs) {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
+        margin: {
+            top: 40px;
+        }
+        >* {
+            margin: 0 20px;
+        }
+        &-prev {
+            padding: 9px 15px;
+            cursor: pointer;
+            &::before {
+                content: '';
+                transform: rotate(-90deg);
+                vertical-align: sub;
+                background: url(../images/up_arrow.svg) center no-repeat;
+                display: inline-block;
+                width: 22px;
+                height: 22px;
+                margin-right: 11px;
+            }
+        }
+    }
+    .filter_preloader {
+        position: relative;
+        &:after {
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity $anim-speed;
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.6) url(../images/filter_preloader.svg) center no-repeat;
+        }
+        &.show {
+            &:after {
+                pointer-events: all;
+                opacity: 1;
+            }
+        }
+    }
+    .checkbox-container {
+        overflow: hidden;
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        min-height: 16px;
+        margin-right: 10px;
+        position: relative;
+        border-radius: 2px;
+        background: $gray-light-2;
+        border: 1px solid #D9D9D9;
+        transition: border-color $anim-speed, background $anim-speed;
+        &::before,
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            background: url(../images/check_icon.svg) center no-repeat;
+            transition: opacity $anim-speed;
+        }
+    }
+}

@@ -1,0 +1,333 @@
+.wheel {
+    &-fixed {
+        position: fixed;
+        z-index: 99999999;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        transition: opacity $anim-speed;
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    &-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 65px;
+        height: 65px;
+        z-index: 999;
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            height: 6px;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            cursor: pointer;
+            background: gold;
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+    &-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 364px;
+        height: 364px;
+        max-width: calc(100% - 30px);
+        canvas {
+            &,
+            &* {
+                color: black;
+            }
+        }
+    }
+    &-border {
+        &-gold {
+            background-image: linear-gradient(to right, #ffd700, /* Ярко-жёлтый */
+            #f8b500, /* Тёмно-золотой */
+            #e5a00d, /* Золото-оранжевый */
+            #d1941a, /* Глубокий золотой */
+            #c78a30, /* Бронзовый */
+            #b7832f, /* Тёмно-бронзовый */
+            #a9731d, /* Коричнево-золотой */
+            #b7731a, /* Тёмный коричнево-золотой */
+            #bf7424, /* Ещё темнее коричнево-золотой */
+            #e38c3c, /* Почти коричневый */
+            #ffd700);
+            /* Ярко-жёлтый (снова) */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &-big {
+                width: 370px;
+                height: 370px;
+            }
+            &-small {
+                width: 78px;
+                height: 78px;
+            }
+        }
+    }
+    &-mark {
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        width: 30px;
+        height: 36px;
+        transform: translateX(-50%);
+        img {
+            width: 30px;
+            height: 36px;
+        }
+    }
+    &-center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $primary-text;
+        height: 72px;
+        width: 72px;
+        border-radius: 50%;
+        .text {
+            color: #fff;
+            @include heading(6);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    // Плашка с бонусом
+    &-bonus {
+        position: fixed;
+        z-index: 99999999;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 310px;
+        &-container {
+            transition: opacity $anim-speed, transform $anim-speed;
+            transform: scale(1);
+            &.hide {
+                transform: scale(0);
+            }
+        }
+        .glowing-element {
+            position: absolute;
+            z-index: 1;
+            width: 359px;
+            height: 359px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: scale(1) translate(-50%, -50%);
+            transform-origin: left;
+            background: radial-gradient(49.03% 49.03% at 50% 50%, #FFC122 0%, rgba(254, 235, 197, 0.00) 100%);
+            animation: glow 2s linear infinite;
+        }
+        .btn,
+        &-title,
+        &-read {
+            display: none;
+        }
+        .btn {
+            width: 100%;
+            margin-bottom: 10px;
+            z-index: 2;
+            position: relative;
+            // &::after {
+            //     position: absolute;
+            //     top: 60%;
+            //     left: 60%;
+            //     content: '';
+            //     display: block;
+            //     width: 50px;
+            //     height: 50px;
+            //     background: transparent url(../images/double-tap-gesture.gif) center;
+            //     background-size: contain;
+            // }
+        }
+        &-title {
+            @include heading(4);
+            color: $white-gray;
+            margin-bottom: 21px;
+            z-index: 2;
+        }
+        &-banner {
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            padding: 28px 15px;
+            margin-bottom: 27px;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            background-image: linear-gradient(163deg, #ffd700, /* Ярко-жёлтый */
+            #f8b500, /* Тёмно-золотой */
+            #e5a00d, /* Золото-оранжевый */
+            #d1941a, /* Глубокий золотой */
+            #c78a30, /* Бронзовый */
+            #8a6221, /* Тёмно-бронзовый */
+            #8b5d13, /* Коричнево-золотой */
+            #b7731a, /* Тёмный коричнево-золотой */
+            #8c561c, /* Ещё темнее коричнево-золотой */
+            #e38c3c, /* Почти коричневый */
+            #ffd700);
+            * {
+                position: relative;
+                z-index: 6;
+            }
+            &::after {
+                content: '';
+                display: block;
+                background: transparent url(../images/wheel-bg.jpg) center;
+                background-size: cover;
+                position: absolute;
+                z-index: 5;
+                border-radius: 5px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: calc(100% - 2px);
+                height: calc(100% - 2px);
+            }
+            &-title {
+                color: $primary-text;
+                @include paragraph($bold);
+                background: transparent url(../images/equivalent_bg.svg) center no-repeat;
+                background-size: 100% 100%;
+                padding: 4px 32px 4px 36px;
+            }
+            &-cost {
+                @include heading(1);
+                color: white;
+                font-size: 6rem;
+                margin: 15px auto 0;
+            }
+            &-subtext {
+                color: $white-gray;
+                @include paragraph();
+            }
+        }
+        &-read {
+            position: relative;
+            color: $white-gray;
+            z-index: 2;
+            @include paragraph();
+        }
+    }
+    &-overlay {
+        position: fixed;
+        z-index: 9999999;
+        background-color: rgba(0, 0, 0, 0.85);
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        transition: opacity $anim-speed;
+        &.hide {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+}
+
+.mainContent .wheel-bonus {
+    margin: 0 auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    z-index: 2;
+    padding: 32px 0;
+    margin-bottom: 32px;
+    // &-title,
+    // &-read {
+    //     color: $primary-text;
+    // }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:after {
+        content: '';
+        display: block;
+        background: repeating-linear-gradient( -45deg, #1c1c1f, #1c1c1f 2px, #06070B 2px);
+        position: absolute;
+        top: 0;
+        left: -15px;
+        width: calc( 100% + 30px);
+        height: 100%;
+    }
+    .btn,
+    &-title,
+    &-read {
+        display: block;
+    }
+    .btn,
+    &-title,
+    &-banner {
+        max-width: 310px;
+        min-width: 310px;
+    }
+}
+
+.spinWheel-more {
+    color: #E4322B !important;
+    font: 400 1.6rem "Open Sans", sans-serif !important;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    z-index: 9;
+    cursor: pointer;
+    transform: translateX(50%);
+    text-decoration: underline;
+    &-p {
+        position: relative;
+        margin-bottom: 25px;
+        &::after {
+            z-index: 8;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 44px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            box-shadow: inset 0px -44px 34px -10px #F9F9F9;
+        }
+        &-noShadow::after {
+            box-shadow: none;
+        }
+    }
+}
+
+@keyframes glow {
+    0% {
+        transform: scale(1) translate(-50%, -50%);
+        transform-origin: left;
+    }
+    50% {
+        transform: scale(1.1) translate(-50%, -50%);
+        transform-origin: left;
+    }
+    100% {
+        transform: scale(1) translate(-50%, -50%);
+        transform-origin: left;
+    }
+}

@@ -1,0 +1,85 @@
+.gameTypes {
+    &-item {
+        @include shadow;
+        padding: 21px 26px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        width: 100%;
+    }
+    &-title {
+        @include heading(3);
+        margin-bottom: 25px!important;
+        flex-grow: 1;
+        @media screen and (max-width: $breakpoint-mobile) {
+            @include heading(2);
+            margin-bottom: 40px;
+        }
+    }
+    &-count {
+        margin-bottom: 15px;
+        span {
+            padding: 10px;
+            position: relative;
+            display: inline-block;
+            color: $primary-color;
+            font: $bold 2rem $title-font;
+            &::after,
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 4px;
+                width: 9999px;
+                top: 50%;
+                background: $primary-color;
+            }
+            &::before {
+                left: 0;
+                transform: translate(-100%, -50%);
+            }
+            &::after {
+                right: 0;
+                transform: translate(100%, -50%);
+            }
+        }
+    }
+    a {
+        align-self: flex-start;
+        font: $regular 1.6rem $title-font;
+        img {
+            transform: rotate(90deg);
+            vertical-align: middle;
+            margin-left: 11px;
+            display: inline-block;
+        }
+    }
+    button {
+        background: transparent url(../images/up_arrow.svg) center no-repeat;
+        background-size: contain;
+        border: 0;
+        outline: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        cursor: pointer;
+        &#next {
+            transform: rotate(90deg);
+        }
+        &#prev {
+            transform: rotate(-90deg);
+            margin-right: 12px;
+        }
+    }
+    .slick {
+        &-list {
+            width: 100%;
+        }
+        &-slide {
+            &,
+            &>div,
+            &>div>div {
+                height: 100%;
+            }
+        }
+    }
+}

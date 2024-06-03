@@ -1,0 +1,1 @@
+import fuckrussia from '@modules/commons/fuckrussia.js'; // Попап для доната в пользу ребят ЗСУ

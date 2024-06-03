@@ -1,0 +1,30 @@
+.breadcrumbs {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    .text>span {
+        color: #828282;
+    }
+    a {
+        position: relative;
+        white-space: nowrap;
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background: url(../images/up_arrow.svg) center no-repeat;
+            background-size: contain;
+            transform: rotate(90deg);
+            margin: 0 11px;
+            vertical-align: middle;
+        }
+        span {
+            transition: color $anim-speed;
+        }
+        &:hover {
+            span {
+                color: $primary-color-hover!important;
+            }
+        }
+    }
+}

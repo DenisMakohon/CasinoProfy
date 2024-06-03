@@ -1,0 +1,239 @@
+.mainInfo {
+    @include shadow;
+    padding: 24px 40px;
+    width: 100%;
+    @media screen and (max-width: $breakpoint-lg) {
+        padding: 15px;
+        margin-bottom: 20px;
+        margin-top: 75px;
+    }
+    &-logo {
+        width: 23.5%;
+        @media screen and (max-width: $breakpoint-lg) {
+            width: 150px;
+            margin: 0 auto 15px;
+        }
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: 100%;
+        }
+        &-img {
+            margin-top: -54px;
+            margin-bottom: 34px;
+            position: relative;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin: -90px auto 15px;
+            }
+            img {
+                border-radius: 50%;
+            }
+            a {
+                position: relative;
+                display: inline-block;
+            }
+            &-plashka {
+                position: absolute;
+                overflow: hidden;
+                bottom: 6px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: $primary-color;
+                padding: 4px 10px;
+                border-radius: 10px 0px;
+                border: 1.5px solid #FFFFFF;
+                color: white;
+                font-size: 1.3rem;
+                font-weight: $bold;
+                line-height: 1em;
+                white-space: nowrap;
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(82deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.6) 100%);
+                }
+            }
+        }
+        .user-rating {
+            margin-top: -20px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin-top: 0;
+            }
+        }
+    }
+    &-container {
+        margin-bottom: 40px;
+        @media screen and (max-width: $breakpoint-lg) {
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0 0 40px auto;
+        }
+        .alert {
+            .grayBgBlock {
+                padding: 15px;
+                width: 100%;
+            }
+            .text-center {
+                @include heading(4);
+                margin-bottom: 15px;
+                img {
+                    vertical-align: top;
+                    width: 21px;
+                }
+            }
+            * {
+                color: $primary-color;
+            }
+        }
+        &.col-xl-12 {
+            margin-bottom: 25px;
+            .mainInfo-bonus {
+                text-align: center;
+            }
+        }
+        &.col-xl-9 {
+            margin-bottom: 0;
+        }
+    }
+    &-plus {
+        @include paragraph;
+        width: 45%;
+        li {
+            padding-left: 30px;
+            margin-bottom: 10px;
+            position: relative;
+            &::before {
+                content: '';
+                display: block;
+                width: 17px;
+                height: 20px;
+                position: absolute;
+                top: 0.1em;
+                left: 0;
+                background: url(../images/casino/shield_chek.svg) center no-repeat;
+                background-size: contain;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &-plus,
+    &-additionalInfo {
+        padding-left: 11.3%;
+        @media screen and (max-width: $breakpoint-lg) {
+            padding-left: 5%;
+        }
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding-left: 15px;
+            width: 100%;
+        }
+    }
+    &-additionalInfo {
+        width: 31.4%;
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0;
+        }
+        .autor,
+        .modifyDate {
+            @include tiny;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin-bottom: 0;
+            }
+        }
+        .autor {
+            margin-bottom: 5px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin-right: 5px;
+                order: 1;
+            }
+        }
+        .modifyDate {
+            margin-bottom: 19px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                order: 2;
+            }
+        }
+        .numberOfGames {
+            margin-bottom: 10px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin-bottom: 0;
+            }
+            &-container {
+                @media screen and (max-width: $breakpoint-mobile) {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 10px;
+                    margin-bottom: 15px;
+                    .grayBgBlock {
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    strong {
+        font-family: $title-font;
+    }
+    &-bonus {
+        padding: 20px;
+        background: $primary-color;
+        @media screen and (max-width: $breakpoint-mobile) {
+            text-align: center;
+        }
+        &-container.col-12 {
+            text-align: center;
+        }
+        *:not(.btn) {
+            color: white;
+        }
+        &-text {
+            margin-bottom: 20px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin-bottom: 16px;
+            }
+        }
+        &-title {
+            margin-bottom: 20px;
+            font: $semi-bold 2.4rem $title-font!important;
+            line-height: 1.1em!important;
+            @media screen and (max-width: $breakpoint-mobile) {
+                font-size: 2.2rem;
+                margin-bottom: 16px;
+            }
+        }
+        &-description {
+            @include bonus-description;
+            margin-top: 0;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 1px solid $primary-color;
+            width: 100%!important;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin-top: 25px;
+            }
+            a {
+                text-decoration: underline;
+                color: $primary-color;
+            }
+        }
+        .btn {
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 268px;
+                margin: 0 auto;
+            }
+        }
+    }
+}

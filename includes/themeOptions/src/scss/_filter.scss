@@ -1,0 +1,33 @@
+.filter {
+    &_item {
+        .input-container {
+            margin-top: 30px;
+            .option-title {
+                font-size: 18px;
+            }
+        }
+    }
+    &-option {
+        position: relative;
+        padding: 30px 15px;
+        .input-container {
+            margin-top: 0;
+        }
+        * {
+            position: relative;
+            z-index: 2;
+        }
+        &::after {
+            content: '';
+            display: block;
+            width: calc(100% - 30px);
+            height: calc(100% - 30px);
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            border-radius: 5px;
+            border: 1px solid #fb7541;
+            background: $bg-color;
+        }
+    }
+}

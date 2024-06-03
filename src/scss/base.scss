@@ -1,0 +1,8 @@
+@import 'commons';
+@import './components/common/topFourCasinos';
+@import './components/common/breadcrumbs';
+@import './components/common/faq';
+@import './components/common/mainContent';
+section:first-of-type {
+    margin: 0 auto;
+}

@@ -1,0 +1,40 @@
+$title-font: 'Josefin Sans',
+sans-serif;
+$paragraph-font: 'Open Sans',
+sans-serif;
+$anim-speed: 0.4s;
+//* =========================== *//
+//*         FONT WEIGHT         *//
+//* =========================== *//
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;
+//* =========================== *//
+//*            COLORS           *//
+//* =========================== *//
+$error: #b46565;
+$blue: #5A80FB;
+$primary-text: #282828;
+$gray-light: #dedede;
+$gray-light-2: #f2f2f2;
+$green: #4aa932;
+$green-hover: #3c8829;
+$primary-color: #E4322B;
+$primary-color-hover: #bb150f;
+$white-gray: #F9F9F9;
+//* =========================== *//
+//*         BREAKPOINTS         *//
+//* =========================== *//
+$breakpoint-xxl: 2560px;
+$breakpoint-xl: 1920px;
+$breakpoint-xl-small: 1680px;
+$breakpoint-lg: 1199px;
+$breakpoint-md: 991px;
+$breakpoint-mobile: 767px;
+$breakpoint-small-mb-xs: 540px;
+$breakpoint-height-md: 700px;

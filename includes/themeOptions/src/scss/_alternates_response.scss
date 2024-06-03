@@ -1,0 +1,17 @@
+#alternates_response {
+    margin-top: 60px;
+    table {
+        width: 100%;
+        border: 1px solid $primary-color;
+        td {
+            padding: 15px;
+        }
+        tr:nth-child(even) {
+            background: $bg-color;
+        }
+    }
+    .option-title {
+        text-align: center;
+        margin: 15px 0;
+    }
+}

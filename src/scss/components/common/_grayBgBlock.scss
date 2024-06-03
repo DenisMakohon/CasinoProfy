@@ -1,0 +1,31 @@
+.grayBgBlock {
+    padding: 10px 12px;
+    font: $medium 1.4rem $title-font!important;
+    line-height: 1em;
+    display: inline-block;
+    background: #F5F5F5;
+    border: 1px solid #E3E3E3;
+    border-radius: 10px;
+    a {
+        font: inherit;
+    }
+    &-square {
+        @extend .grayBgBlock;
+        @extend .d-inline-flex;
+        @extend .align-items-center;
+        @extend .justify-content-center;
+        min-width: 38px;
+        height: 38px;
+    }
+    &-list {
+        @extend .d-flex;
+        @extend .flex-wrap;
+        margin-bottom: -10px;
+        margin-right: -10px;
+        width: 100%;
+        >* {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+    }
+}

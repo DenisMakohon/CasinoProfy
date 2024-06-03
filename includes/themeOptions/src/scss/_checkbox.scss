@@ -1,0 +1,41 @@
+// Свичер
+.switch {
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    width: 36px;
+    height: 18px;
+    display: inline-block;
+    background-color: $bg-color;
+    border-radius: 20px;
+    transition: background 0.4s;
+    border: 1px solid $primary-color;
+    &:before {
+        border-radius: 50%;
+        position: absolute;
+        content: "";
+        height: 12px;
+        width: 12px;
+        left: 4px;
+        bottom: 3px;
+        background-color: $secondary-color;
+        transition: transform .4s;
+    }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    &:checked~.switch {
+        background-color: $primary-color;
+        &::before {
+            transform: translateX(15px);
+        }
+    }
+}
+
+.input-container {
+    input[type="checkbox"],
+    input[type="radio"] {
+        display: none;
+    }
+}

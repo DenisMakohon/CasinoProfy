@@ -1,0 +1,75 @@
+@import './components/common/variables';
+@import './components/common/mixins';
+@import './components/common/fonts';
+@import './components/libs/bootstrap';
+@import './components/common/reset';
+@import './components/common/title';
+@import './components/common/text';
+@import './components/common/footer';
+@import './components/common/wp-block';
+@import './components/common/mainContent';
+body {
+    margin-top: 80px;
+    background: $white-gray;
+    @include paragraph;
+    @media screen and (max-width: $breakpoint-lg) {
+        margin-top: 60px;
+        margin-bottom: 68px;
+    }
+}
+
+strong,
+.bold {
+    font-weight: $bold!important;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .desktop {
+        display: none!important;
+    }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+    .tablet {
+        display: none!important;
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg + 1) {
+    .low-tablet {
+        display: none!important;
+    }
+}
+
+@media screen and (min-width: $breakpoint-mobile + 1) {
+    .mobile {
+        display: none!important;
+    }
+}
+
+.container {
+    @media (min-width: $breakpoint-lg + 1) {
+        max-width: 1200px;
+    }
+    @media screen and (max-width: $breakpoint-lg) {
+        max-width: 100%;
+    }
+}
+
+a,
+a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 80px;
+    @media screen and (max-width: $breakpoint-lg) {
+        margin-bottom: 40px;
+    }
+}

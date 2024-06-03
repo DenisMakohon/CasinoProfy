@@ -1,0 +1,66 @@
+.things {
+    counter-reset: things;
+    &-img {
+        @media screen and (max-width: $breakpoint-mobile) {
+            height: 25vh!important;
+            margin-bottom: 10px;
+        }
+    }
+    &-item {
+        padding-bottom: 40px;
+        position: relative;
+        counter-increment: things;
+        padding-left: 70px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding-left: 40px;
+            padding-bottom: 30px;
+        }
+        &::before {
+            position: absolute;
+            display: block;
+            width: 60px;
+            height: 60px;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            background: $primary-color;
+            content: counter(things);
+            font: $bold 4rem $title-font;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+            z-index: 10;
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 32px;
+                height: 32px;
+                font-size: 2rem;
+                line-height: 32px;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            z-index: 9;
+            width: 4px;
+            height: calc(100% - 30px);
+            top: 30px;
+            left: 28px;
+            background: $primary-color;
+            @media screen and (max-width: $breakpoint-mobile) {
+                left: 14px;
+                top: 26px;
+                height: calc(100% - 16px);
+            }
+        }
+        &-title {
+            @include heading(5);
+            margin-bottom: 10px;
+        }
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

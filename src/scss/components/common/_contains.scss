@@ -1,0 +1,100 @@
+#contains {
+    overflow: hidden;
+    transition: height $anim-speed;
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: {
+            top: 0;
+            bottom: 0;
+            right: -20px;
+        }
+        @media screen and (max-width: $breakpoint-lg + 42) {
+            margin: {
+                right: -15px;
+            }
+        }
+        li {
+            padding: 0;
+            margin: {
+                top: 0;
+                bottom: 15px;
+                right: 15px;
+            }
+            &::before {
+                display: none;
+            }
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 100%;
+            }
+        }
+        a {
+            @include heading(6);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: box-shadow $anim-speed;
+            background: white;
+            padding: 8px 12px 6px;
+            color: $primary-text!important;
+            text-decoration: none;
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 100%;
+                margin: 0;
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 100%;
+            }
+            &:hover {
+                @include shadow;
+            }
+        }
+    }
+}
+
+.contains {
+    margin-top: 0;
+    margin-bottom: 0;
+    &-btn {
+        position: relative;
+        @include heading(5);
+        background: $gray-light-2;
+        padding: 17px 16px;
+        cursor: pointer;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-bottom: 20px;
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background: url(../images/up_arrow.svg) center no-repeat;
+            background-size: contain;
+            margin-left: 11px;
+            vertical-align: bottom;
+            transform: rotate(180deg);
+            transition: transform $anim-speed;
+        }
+        &.open {
+            &:after {
+                transform: rotate(0);
+            }
+        }
+    }
+}
+
+.containsMore {
+    padding-top: 15px;
+    img {
+        cursor: pointer;
+        transition: transform $anim-speed;
+        &.up {
+            transform: rotate(180deg);
+        }
+    }
+}

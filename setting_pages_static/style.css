@@ -1,0 +1,399 @@
+textarea,
+input[type="text"] {
+    width: 100%;
+}
+
+iframe {
+    height: 200px!important;
+}
+
+.button.button-primary.red {
+    background-color: red;
+    border-color: red;
+    display: inline-block;
+}
+
+.banner-item,
+.services-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-item>*,
+.services-item>*,
+input,
+label {
+    margin-bottom: 25px!important;
+}
+
+.banner-item-delete,
+.services-item-delete {
+    align-self: flex-end;
+}
+
+.banner-item-img,
+.services-item-img {
+    background: no-repeat center;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+}
+
+label {
+    display: block;
+}
+
+label input {
+    margin-bottom: 0!important;
+}
+
+.tabs-settings-list {
+    margin-top: 25px;
+    display: flex;
+    border-bottom: 1px solid #48D882;
+    flex-wrap: wrap;
+}
+
+.tabs-settings-list p {
+    padding: 15px 25px;
+    margin: 0;
+    display: inline;
+    cursor: pointer;
+}
+
+.tabs-settings-list p.active {
+    background: #4AFA91;
+}
+
+.settings-item {
+    display: none;
+}
+
+.settings-item.active {
+    display: block;
+}
+
+.first-col {
+    width: 200px;
+}
+
+.autor_section {
+    padding: 15px;
+    border: 1px solid #b8b4b4;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.autor_section input {
+    margin-top: 10px;
+}
+
+.autor_section img {
+    width: 120px;
+    height: auto;
+}
+
+.bottom-line-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button.red,
+.button.red:hover {
+    background: rgb(255, 74, 74);
+    border-color: rgb(255, 74, 74);
+    color: white;
+}
+
+.input-dropdown-container {
+    margin-top: 15px;
+    position: relative;
+}
+
+.input-dropdown-container input {
+    margin: 0!important;
+}
+
+.input-dropdown {
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    max-height: 300px;
+    width: 100%;
+    margin: 0;
+    border: 1px solid #747474;
+    display: none;
+}
+
+.input-dropdown.show {
+    display: block;
+}
+
+.input-dropdown li {
+    margin: 0;
+    display: none;
+    padding: 5px;
+    border-bottom: 1px solid #747474;
+    cursor: pointer;
+    background: white;
+    transition: background 0.4s;
+}
+
+.input-dropdown li:hover {
+    background: rgb(212, 212, 212);
+}
+
+.input-dropdown li:last-child {
+    border: none;
+}
+
+.input-dropdown li.show {
+    display: block;
+}
+
+.popup-casino-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.popup-casino {
+    padding: 0 15px;
+    border-radius: 50px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background: white;
+    display: flex;
+    align-items: center;
+    transition: background 400ms;
+}
+
+.popup-casino.same {
+    background: rgb(247, 176, 176);
+}
+
+.popup-casino-remove {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #000;
+    padding: 5px;
+    width: 15px;
+    height: 15px;
+    background: rgb(202, 202, 202);
+    margin-left: 10px;
+    margin-right: -15px;
+}
+
+.popup-casino-remove::after,
+.popup-casino-remove:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: calc( 100% - 10px);
+    height: 2px;
+    background: #000;
+    top: 50%;
+    left: 50%;
+}
+
+.popup-casino-remove::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.popup-casino-remove::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.sameCasino {
+    margin-bottom: 15px!important;
+    margin-top: -15px!important;
+    color: rgb(212, 62, 62);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sameCasino.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.plashka-item,
+.payment-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.plashka-item input,
+.payment-item input,
+.coloris {
+    margin-bottom: 0!important;
+}
+
+.plashka-item-part,
+.payment-item-part {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+.plashka-item .button.red,
+.payment-item .button.red {
+    margin: 15px 15px auto auto;
+}
+
+.clr-field {
+    width: 100%;
+}
+
+[data-settings="plashka"] .addPlashka,
+[data-settings="payment"] .addPayment {
+    margin-left: 15px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.redirection_table>div>div {
+    padding: 15px;
+    border: #cfcdcd;
+}
+
+.redirection_table>div:nth-child(even) {
+    background: #dedede;
+}
+
+.redirection_table {
+    counter-reset: section;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 1px solid #000;
+}
+
+.redirection_table .row .num::before {
+    counter-increment: section;
+    /* Инкрементирует счётчик*/
+    content: counter(section);
+}
+
+.redirection_table .num {
+    width: 50px;
+    text-align: center;
+}
+
+.redirection_table .code {
+    text-align: center;
+    width: 100px;
+}
+
+.redirection_table .code[class^='code_4'],
+.redirection_table .code[class^='code_5'] {
+    color: rgb(244, 53, 53);
+}
+
+.redirection_table .code[class^='code_2'] {
+    color: rgb(8, 146, 8);
+}
+
+.redirection_table .url,
+.redirection_table .r_url {
+    width: 600px;
+}
+
+.tabs-settings-list {
+    position: relative;
+}
+
+.tabs-settings-list .walk {
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: auto;
+    pointer-events: none;
+    animation: 5s linear 0s infinite walk;
+}
+
+.tabs-settings-list .walk.show {
+    opacity: 1;
+}
+
+.filter_item {
+    border-bottom: 1px solid grey;
+    padding: 15px;
+}
+
+.js-payment_methods .button.red {
+    margin-bottom: 25px;
+}
+
+.custom-translations {
+    position: relative;
+    display: flex;
+}
+
+.custom-translations label:first-child {
+    padding-right: 15px;
+    width: 30%;
+}
+
+.custom-translations label:nth-child(2) {
+    width: 70%;
+}
+
+.removeRow {
+    width: 10px;
+    min-width: 10px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 9;
+    top: 15px;
+    right: -25px;
+}
+
+.spin_wheel-item {
+    display: flex;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+}
+
+hr {
+    border-color: black;
+}
+
+.spin_wheel-item label {
+    width: 20%;
+    padding: 0 15px;
+}
+
+.spin_wheel-item-remove {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(0) scaleX(1);
+    }
+    49% {
+        transform: translateX(800px) scaleX(1);
+    }
+    50% {
+        transform: translateX(800px) scaleX(-1);
+    }
+    99% {
+        transform: translateX(0) scaleX(-1);
+    }
+    100% {
+        transform: translateX(0) scaleX(1);
+    }
+}

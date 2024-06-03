@@ -1,0 +1,21 @@
+.gameInfo {
+    margin-bottom: 0;
+    &-list {
+        &-item {
+            @include shadow;
+            width: 100%;
+            padding: 20px;
+            margin-bottom: 30px;
+            &-logo {
+                margin-bottom: 25px;
+            }
+            &-title {
+                @include heading(4);
+            }
+        }
+    }
+}
+
+.mainContent {
+    margin-top: 0;
+}

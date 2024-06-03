@@ -1,0 +1,23 @@
+.simpleList,
+.mainContent ul:not([class]) {
+    li {
+        @include paragraph;
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: 0.5em;
+            left: 10px;
+            background-color: $primary-color;
+            border-radius: 50%;
+        }
+    }
+}

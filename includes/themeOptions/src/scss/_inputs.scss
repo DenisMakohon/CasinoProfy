@@ -1,0 +1,131 @@
+@import "./checkbox";
+@import "./range";
+textarea,
+input[type="text"],
+input[type=""],
+input[type="number"] {
+    width: 100%;
+    display: block;
+    padding: 0.5rem 10px;
+    font-size: 0.8125rem;
+    line-height: 1.5385;
+    color: #333;
+    background-color: #fff;
+    outline: 0;
+    border-radius: 0;
+    box-shadow: 0 0 0 0 transparent;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border: 1px solid $secondary-color;
+    width: 100%;
+    border-radius: 5px;
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0 transparent, 0 2px 0 $secondary-color;
+        border: 1px solid $secondary-color;
+    }
+    &.error~p.required {
+        display: block;
+    }
+    &.clr-color {
+        margin: 0 !important;
+    }
+}
+
+.option-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input {
+    &-container,
+    &-switch {
+        .option-title {
+            margin-bottom: 10px;
+        }
+        >.option-title {
+            width: 100%;
+        }
+    }
+    &-container {
+        .clr-field button {
+            z-index: 99;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        label {
+            align-items: center;
+            margin-bottom: 15px;
+            p {
+                margin: 0;
+            }
+        }
+        .button.red {
+            margin-bottom: 25px;
+        }
+    }
+    &-switch {
+        label {
+            width: 350px;
+            margin-bottom: 10px!important;
+            .option-title {
+                cursor: pointer;
+                margin-right: 15px;
+                margin-left: 25px;
+                font-weight: 400;
+                margin-bottom: 0;
+            }
+        }
+        p {
+            width: calc( 100% - 78px);
+        }
+    }
+}
+
+.wp-editor-wrap {
+    margin-bottom: 25px;
+}
+
+.drop-container {
+    width: 100%;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    height: 250px;
+    padding: 25px 15px;
+    background-color: $primary-color;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 0 0 transparent;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-width: 1px 0;
+    margin-bottom: 25px;
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0 transparent, 0 1px 0 $primary-color;
+    }
+    &.error~p.required {
+        display: block;
+    }
+    &-title {
+        margin-bottom: 15px;
+        &-name {
+            margin-top: 15px;
+        }
+    }
+    input[type="file"] {
+        cursor: pointer;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    * {
+        text-align: center;
+        color: white!important;
+    }
+}

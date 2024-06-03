@@ -1,0 +1,108 @@
+@for $i from 1 through 6 {
+    h#{$i},
+    .heading-#{$i} {
+        @include heading($i);
+    }
+}
+
+.title {
+    &-block {
+        margin-bottom: 40px;
+    }
+    &-line {
+        position: relative;
+        padding-left: 50px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding-left: 0;
+            padding-bottom: 20px;
+        }
+        &:before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 4px;
+            background: $primary-color;
+            margin-right: 10px;
+            vertical-align: middle;
+            @media screen and (max-width: $breakpoint-mobile) {
+                top: auto;
+                bottom: 0;
+                transform: none;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.extendTitle {
+    h2 {
+        padding-left: 50px!important;
+        margin: 0!important;
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding-left: 0!important;
+        }
+        &::before {
+            left: 0!important;
+        }
+    }
+    &-title {
+        justify-content: space-between;
+        margin-top: 40px!important;
+        margin-bottom: 20px!important;
+        @media screen and (max-width: $breakpoint-mobile) {
+            flex-direction: column;
+            align-items: flex-start!important;
+        }
+    }
+    &-content {
+        @include paragraph;
+        flex-shrink: 0;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-top: 20px;
+        }
+        @media screen and (min-width: $breakpoint-mobile + 1) {
+            margin-right: 0;
+            margin-left: auto;
+        }
+        &-title {
+            position: relative;
+            padding: 12px 0;
+            cursor: pointer;
+            img {
+                vertical-align: middle;
+                transition: transform $anim-speed;
+                margin-left: 11px;
+                transform: rotate(180deg);
+            }
+            &.open {
+                img {
+                    transform: rotate(0);
+                }
+                .filter-list {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+            &.update {
+                @include heading(6);
+                cursor: auto;
+                padding-left: 24px;
+                &::before {
+                    content: '';
+                    background: url(../images/latest_update.svg) center no-repeat;
+                    background-size: contain;
+                    display: block;
+                    width: 14px;
+                    height: 16px;
+                    position: absolute;
+                    top: 8px;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,122 @@
+.popupCasinos {
+    &Fixed {
+        position: fixed;
+        @include shadow;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding-top: 50px;
+        z-index: 99999999;
+        transition: opacity $anim-speed;
+        opacity: 0;
+        pointer-events: none;
+        &.show {
+            &,
+            &~.overlay {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+        .popupCasinos-slider {
+            margin-bottom: 25px;
+        }
+        &-close {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid $primary-color;
+            top: 5px;
+            right: 5px;
+            background: white;
+            cursor: pointer;
+            &:after,
+            &:before {
+                background: $primary-color;
+                content: '';
+                display: block;
+                width: calc(100% - 4px);
+                height: 2px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+            &:after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+            &:before {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+    }
+    &-slider {
+        margin-bottom: 50px;
+        width: 100%;
+        .mainInfo-logo-img {
+            margin: 0 0;
+            img {
+                margin-bottom: 20px;
+                border-radius: 50%;
+            }
+        }
+        .slick-dots {
+            .slick-active,
+            li:hover {
+                button:after {
+                    background: $primary-color;
+                }
+            }
+            button:after {
+                background: $primary-text;
+            }
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+    &-arrows {
+        img {
+            width: 25px;
+            height: 25px;
+        }
+        &-next,
+        &-prev {
+            cursor: pointer;
+            margin: 15px 0;
+        }
+        &-next {
+            margin-left: 15px;
+            display: inline-block;
+            transform: rotate(90deg);
+        }
+        &-prev {
+            transform: rotate(-90deg);
+        }
+    }
+    &-title {
+        @include heading(4);
+    }
+    &-item {
+        padding: 15px;
+    }
+    &-inner {
+        @include shadow;
+        padding: 25px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    z-index: 99999998;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $anim-speed;
+}

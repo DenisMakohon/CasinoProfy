@@ -1,0 +1,163 @@
+@import './simpleList';
+.mainContent {
+    position: relative;
+    section:first-child {
+        margin-top: 0;
+    }
+    table {
+        @extend .text;
+        @include table;
+    }
+    >,
+    .wp-block-column> {
+        p,
+        li,
+        ul,
+        ol {
+            @extend .text;
+            margin-bottom: 1em;
+            margin-bottom: 1.6rem;
+        }
+        li {
+            ol,
+            ul {
+                margin-top: 1em;
+            }
+        }
+    }
+    @for $i from 1 through 6 {
+        h#{$i}:not(.plusesMinuses-title, .js-openAnswer) {
+            @extend .title-line;
+            position: relative;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    img {
+        height: auto;
+    }
+    .maskot-img {
+        img {
+            @media screen and (max-width: $breakpoint-mobile) {
+                max-height: 200px;
+                margin-top: 20px;
+            }
+        }
+    }
+    .wp-block-pullquote {
+        margin: 80px 0;
+        padding: 20px;
+        background: white;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin: 40px 0;
+        }
+        * {
+            @include paragraph;
+            text-align: left;
+        }
+    }
+    section {
+        padding: 0;
+        margin: 40px 0;
+        .title-line {
+            padding-left: 65px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                padding-left: 15px;
+            }
+            &::before {
+                left: 15px;
+            }
+        }
+    }
+    .list-title {
+        @include heading(5);
+        padding-left: 20px;
+        margin-bottom: 10px;
+        +ul {
+            margin-left: 20px;
+        }
+    }
+    .wp-block-quote {
+        position: relative;
+        padding-left: 78px;
+        margin: 40px 0;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin: 20px 0;
+            padding-left: 36px;
+        }
+        P {
+            @include heading(5);
+            font-style: italic!important;
+            @media screen and (max-width: $breakpoint-mobile) {
+                @include heading(6);
+            }
+        }
+        &:before {
+            content: '';
+            width: 53px;
+            height: 42px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            background: url(../images/quote.svg) center no-repeat;
+            background-size: contain;
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 26px;
+                height: 21px;
+            }
+        }
+    }
+    .float {
+        &-left {
+            img {
+                float: left;
+                margin-right: 34px;
+            }
+        }
+        &-right {
+            img {
+                float: right;
+                margin-left: 34px;
+            }
+        }
+        &-left,
+        &-right {
+            @extend .maskot-img;
+            img {
+                @media screen and (max-width: $breakpoint-mobile) {
+                    margin: 20px auto;
+                    float: none;
+                    display: block;
+                }
+            }
+        }
+    }
+    ol {
+        counter-reset: li;
+        padding-left: 10px;
+        &>li {
+            counter-increment: li;
+        }
+        li {
+            @extend .text;
+            &::before {
+                content: counter(li)".";
+                font-weight: $bold;
+                color: $primary-color;
+                display: inline-block;
+                margin-right: 5px;
+            }
+        }
+    }
+    a:not([class]) {
+        color: $primary-color!important;
+        text-decoration: underline;
+        &:hover {
+            color: $primary-color-hover!important;
+        }
+    }
+}

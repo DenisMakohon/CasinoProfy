@@ -1,0 +1,48 @@
+.faq {
+    h2 {
+        @media screen and (min-width: $breakpoint-mobile+1) {
+            margin-bottom: 40px;
+        }
+    }
+    h3 {
+        @include heading(5);
+        margin-bottom: 10px;
+        position: relative;
+        cursor: pointer;
+        &::before {
+            display: block;
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            background: url(../images/up_arrow.svg) center no-repeat;
+            background-size: contain;
+            top: -3px;
+            left: 0;
+            transform: rotate(180deg);
+            transform-origin: center;
+            transition: transform $anim-speed;
+        }
+        &.open {
+             ::before {
+                transform: rotate(0);
+            }
+        }
+    }
+    h3,
+    .text {
+        padding-left: 33px;
+    }
+    &-item {
+        margin-bottom: 40px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-bottom: 20px;
+        }
+    }
+    &-masckot {
+        @media screen and (max-width: $breakpoint-mobile) {
+            height: 25vh!important;
+            margin-bottom: 10px;
+        }
+    }
+}

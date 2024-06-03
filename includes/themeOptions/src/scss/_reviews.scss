@@ -1,0 +1,21 @@
+.reviews_clients_section {
+    margin-bottom: 25px;
+    padding: 30px 15px;
+    position: relative;
+    * {
+        position: relative;
+        z-index: 2;
+    }
+    &::after {
+        content: '';
+        display: block;
+        width: calc(100% - 30px);
+        height: calc(100% - 30px);
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        border-radius: 5px;
+        border: 1px solid #fb7541;
+        background: $bg-color;
+    }
+}

@@ -1,0 +1,174 @@
+@import './components/common/variables';
+@import './components/common/mixins';
+@import './components/common/fonts';
+@import './../../node_modules/slick-carousel/slick/slick.scss';
+@import './../../node_modules/nouislider/dist/nouislider.min.css';
+@import './components/common/slick';
+@import './components/libs/bootstrap';
+@import './components/common/reset';
+@import './components/common/btn';
+@import './components/common/input';
+@import './components/common/popup';
+@import './components/common/title';
+@import './components/common/text';
+@import './components/common/up-btn';
+@import './components/common/nav';
+@import './components/common/footer';
+@import './components/common/grayBgBlock';
+@import './components/common/topCasino';
+@import './components/common/moreCasinoInfo';
+@import './components/common/rating';
+@import './components/common/wp-block';
+@import './components/common/autor';
+@import './components/common/popupCookie';
+@import './components/common/paymentHeader';
+@import './components/games/moreGames';
+@import './components/common/contains';
+@import './components/common/slider';
+@import './components/common/casinoSidebar';
+@import './components/casino/popupCasinos';
+@import './components/casino/casinoFilter';
+@import './components/common/reviewsClients';
+@import './components/common/fortuneWheel';
+.white-nowrap {
+    white-space: nowrap;
+}
+
+h1 {
+    margin: 20px 0 20px auto;
+}
+
+body {
+    margin-top: 80px;
+    background: $white-gray;
+    @include paragraph;
+    @media screen and (max-width: $breakpoint-lg) {
+        margin-top: 0;
+        margin-bottom: 68px;
+    }
+}
+
+.no-padding {
+    &-left {
+        padding-left: 0;
+    }
+    &-right {
+        padding-right: 0;
+    }
+}
+
+strong,
+.bold {
+    font-weight: $bold!important;
+}
+
+@media screen and (max-width: $breakpoint-mobile) {
+    .desktop {
+        display: none!important;
+    }
+    .wp-block-column,
+    .wp-container-4.wp-container-4,
+    .wp-container-7.wp-container-7,
+    .wp-container-10.wp-container-10,
+    .wp-container-3.wp-container-3,
+    .wp-container-6.wp-container-6,
+    .wp-container-9.wp-container-9,
+    .wp-container-13.wp-container-13,
+    .wp-container-17.wp-container-17,
+    .wp-container-21.wp-container-21,
+    .wp-container-24.wp-container-24,
+    .wp-container-27.wp-container-27 {
+        flex-wrap: wrap!important;
+    }
+    .wp-block-image {
+        float: none!important;
+        +* {
+            clear: both;
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-lg) {
+    .tablet {
+        display: none!important;
+    }
+}
+
+@media screen and (min-width: $breakpoint-lg + 1) {
+    .low-tablet {
+        display: none!important;
+    }
+}
+
+@media screen and (min-width: $breakpoint-mobile + 1) {
+    .mobile {
+        display: none!important;
+    }
+}
+
+.container {
+    @media (min-width: $breakpoint-lg + 1) {
+        max-width: 1200px;
+    }
+    @media screen and (max-width: $breakpoint-md) {
+        max-width: 100%;
+    }
+}
+
+a,
+a:hover {
+    outline: none;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    margin-bottom: 80px;
+    @media screen and (max-width: $breakpoint-lg) {
+        margin-bottom: 40px;
+    }
+}
+
+// .allContent>.container {
+//     &:first-child {
+//         margin-bottom: 0;
+//         @media screen and (max-width: $breakpoint-lg) {
+//             margin-bottom: 0;
+//         }
+//     }
+//     &:last-child {
+//         margin-bottom: 80px;
+//         @media screen and (max-width: $breakpoint-lg) {
+//             margin-bottom: 40px;
+//         }
+//     }
+// }
+.not-accepted {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 999;
+    @media screen and (max-width: $breakpoint-lg) {
+        top: 60px;
+    }
+    p {
+        pointer-events: all;
+        background: white;
+        padding: 5px;
+        box-shadow: 0px 0px 10px 0px $primary-color;
+    }
+}
+
+.grecaptcha-badge {
+    visibility: hidden;
+}
+
+iframe {
+    max-width: 100%;
+}

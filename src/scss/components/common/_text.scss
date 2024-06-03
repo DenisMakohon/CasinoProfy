@@ -1,0 +1,28 @@
+.text {
+    &,
+    *:not(.btn, .topCasino-min_deposit-text) {
+        @include paragraph;
+        color: $primary-text;
+    }
+    &-big {
+        @include heading(3, $paragraph-font);
+    }
+    &-middle {
+        @include heading(4, $paragraph-font);
+    }
+    &-upper {
+        text-transform: uppercase;
+    }
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
+    &-left {
+        text-align: left;
+    }
+    &.block-description {
+        margin-bottom: 70px;
+    }
+}

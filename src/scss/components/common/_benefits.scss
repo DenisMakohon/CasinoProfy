@@ -1,0 +1,40 @@
+.benefits {
+    @extend section;
+    &-list {
+        margin-top: 15px;
+        &-left {
+            @media screen and (min-width: $breakpoint-mobile + 1) {
+                padding-right: 0;
+            }
+        }
+        &-right {
+            @media screen and (min-width: $breakpoint-mobile + 1) {
+                padding-left: 0;
+            }
+        }
+    }
+    &-item {
+        margin-bottom: 40px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-bottom: 20px;
+        }
+    }
+    &-icon {
+        width: 60px;
+        margin-right: 10px;
+        flex-shrink: 0;
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: 40px;
+        }
+    }
+    &-img img {
+        @media screen and (max-width: $breakpoint-mobile) {
+            max-height: 25vh;
+            margin-bottom: 20px;
+        }
+    }
+    &-title {
+        @include heading(5);
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,53 @@
+.casinoGames {
+    @include shadow;
+    margin: 20px 0;
+    padding: 40px 50px;
+    @media screen and (max-width: $breakpoint-md) {
+        padding: 24px;
+        flex-wrap: wrap;
+    }
+    &-big {
+        padding: 16px;
+        font: $semi-bold 3rem $title-font!important;
+        line-height: 1em;
+        margin-right: 60px;
+        white-space: nowrap;
+        @media screen and (max-width: $breakpoint-md) {
+            width: 100%;
+            margin: 0 auto 10px;
+        }
+    }
+    &-other {
+        margin-right: -50px;
+        margin-bottom: -24px;
+        flex-grow: 1;
+        @media screen and (max-width: $breakpoint-lg) {
+            margin-right: -30px;
+        }
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: 100%;
+            margin-right: 0;
+        }
+        li {
+            width: 25%;
+            padding-right: 50px;
+            margin-bottom: 24px;
+            @media screen and (max-width: $breakpoint-lg) {
+                width: 32%;
+                padding-right: 15px;
+            }
+            @media screen and (max-width: $breakpoint-md) {
+                width: 49%;
+                margin-bottom: 10px;
+            }
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 100%;
+                padding-right: 0;
+            }
+            .grayBgBlock {
+                margin-left: 15px;
+                margin-right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,251 @@
+.popup {
+    position: fixed;
+    overflow: auto;
+    max-height: calc( 100vh - 90px);
+    top: 167px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    width: 634px;
+    max-width: 100%;
+    border-radius: 8px;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $anim-speed;
+    padding: 64px {
+        bottom: 21px;
+    }
+    @media screen and (max-width: $breakpoint-mobile) {
+        top: 16px;
+        left: 16px;
+        transform: none;
+        width: calc( 100% - 30px);
+        padding: 16px {
+            top: 64px;
+        }
+    }
+    &.open,
+    &.open~.overlay {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    &-content {
+        display: flex;
+        flex-wrap: wrap;
+        >* {
+            width: 100%;
+        }
+    }
+    &-close {
+        position: absolute;
+        cursor: pointer;
+        z-index: 9;
+        width: 32px;
+        height: 32px;
+        top: 16px;
+        right: 16px;
+        border-radius: 50%;
+        background: $gray-light url(../images/ico_close.png) center no-repeat;
+        background-size: 12px;
+        transition: background $anim-speed, transform $anim-speed;
+        &:hover {
+            background-color: #d8dbe7;
+            transform: rotate(180deg);
+        }
+    }
+    &-title {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    &-ukdemo {
+        position: absolute;
+        overflow: auto;
+        max-height: calc( 100% - 30px);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        width: calc( 100% - 30px);
+        max-width: 650px;
+        border-radius: 8px;
+        pointer-events: none;
+        padding: 0;
+        z-index: 999;
+        .heading-4 {
+            background: $primary-color;
+            color: white;
+            padding: 20px;
+            @media screen and (max-width: $breakpoint-lg) {
+                font-size:15px !important;
+            }
+            @media screen and (max-width: $breakpoint-mobile) {
+                padding: 9px;
+                font-size:14px !important;
+            }
+        }
+        .mainText {
+            padding: 20px;
+            @media screen and (max-width: $breakpoint-lg) {
+                padding: 12px;
+                font-size: 14px;
+            }
+            @media screen and (max-width: $breakpoint-mobile) {
+                display: none;
+            }
+        }
+        .btn {
+            margin-bottom: 15px;
+        }
+        &~.overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+        }
+    }
+}
+
+.popupUkDemo {
+    &-list {
+        display: flex;
+        justify-content: space-evenly;
+        @media screen and (max-width: $breakpoint-mobile) {
+            display: none;
+        }
+    }
+    &-list-mobile {
+        display: block;
+        @media screen and (min-width: $breakpoint-mobile) {
+            display: none;
+        }
+        .slick-dots {
+            .slick-active {
+                button {
+                    &:after {
+                        background: #e4322b;
+                    }
+                }
+            }
+            li:not(.slick-active) {
+                button {
+                    &:after {
+                        background: #d6d6d6;
+                    }
+                }
+            }
+        }
+    }
+    &-item {
+        width: 30%;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        padding: 7px;
+        border-radius: 5px;
+        box-shadow: 0px 5px 20px rgb(0 0 0 / 10%);
+        @media screen and (max-width: $breakpoint-mobile) {
+            min-height: 80px;
+        }
+    }
+    &-item-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 145px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            height: 70px;
+            justify-content: center;
+        }
+    }
+    &-item-bonus-wrap {
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-right: 10px;
+        }
+    }
+    &-item--wrap-block {
+        display: flex;
+        @media screen and (max-width: $breakpoint-mobile) {
+            align-items: center;
+        }
+    }
+    &-btn-wrap > {
+        a {
+            width: 70%;
+            margin-bottom: 0 !important;
+            padding: 0px 23px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                padding: 3px 16px;
+                font-size: 11px !important;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                margin-left: 10px;
+                align-items: center;
+                line-height: 11px !important;
+            }
+        }
+    }
+    &-item--img-block {
+        width: 30%;
+        height: 40px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            height: 25px;
+        }
+        img {
+            border-radius: 5px;
+            height: 40px;
+            object-fit: cover;
+            @media screen and (max-width: $breakpoint-mobile) {
+                height: 25px;
+            }
+        }
+    }
+    &-item--info-block {
+        width: 70%;
+        margin-left: 10px;
+    }
+    &-title {
+        font-size: 14px;
+        text-align: left;
+        font-weight: 600;
+        line-height: 17px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            font-size: 11px;
+        }
+    }
+    &-bonus {
+        font-size: 14px;
+        text-align: left;
+        line-height: 17px;
+        margin-top: 5px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            font-size: 11px;
+            margin-top: 0;
+            line-height: 14px;
+        }
+    }
+    &-item-t_c-wrap {
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+    &-bonus-t_c {
+        a {
+            font-size: 10px;
+            text-align: center;
+            line-height: 21px;
+            transition: 0.3s;
+            color: #7f7f7f;
+            font-weight: 400;
+            &:hover {
+                text-decoration: underline;
+            }
+            @media screen and (max-width: $breakpoint-mobile) {
+                line-height: 10px;
+            }
+        }
+    }
+}

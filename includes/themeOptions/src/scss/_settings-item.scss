@@ -1,0 +1,61 @@
+.settings-item {
+    display: none;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    &.active {
+        display: block;
+    }
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 5px;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(16, 42, 73, .8) url(./../images/ripples.svg) center no-repeat;
+        background-size: 30%;
+        opacity: 0;
+        pointer-events: none;
+    }
+    &.loader:after {
+        opacity: 1;
+        pointer-events: all;
+    }
+    &,
+    * {
+        // Стилизация для всего скроллбара
+        &::-webkit-scrollbar {
+            width: 12px; // Ширина вертикального скроллбара
+            height: 12px; // Высота горизонтального скроллбара
+        }
+        // Стилизация для дорожки (track) скроллбара
+        &::-webkit-scrollbar-track {
+            background: $primary-color; // Цвет фона дорожки скроллбара
+        }
+        // Стилизация для ползунка (thumb) скроллбара
+        &::-webkit-scrollbar-thumb {
+            background-color: $secondary-color; // Цвет ползунка скроллбара
+            border-radius: 8px; // Скругление углов ползунка
+            cursor: pointer;
+            border: 2px solid $primary-color; // Граница ползунка
+            &:hover {
+                background-color: $secondary-color; // Цвет ползунка при наведении
+            }
+        }
+        // Стилизация для кнопок скроллбара (опционально, если они есть)
+        &::-webkit-scrollbar-button {
+            background-color: $primary-color;
+            &:hover {
+                background-color: $secondary-color;
+            }
+        }
+        // Стилизация для уголка между горизонтальным и вертикальным скроллбарами (corner)
+        &::-webkit-scrollbar-corner {
+            background-color: $primary-color;
+        }
+    }
+}

@@ -1,0 +1,117 @@
+@import './vars';
+@import './libs/bootstrap';
+@import './libs/coloris';
+@import './inputs';
+@import './dropdown';
+@import './button';
+@import './settings-item';
+@import './tabs';
+@import './filter';
+@import './reviews';
+@import './spinWheel';
+@import './redirectionTable';
+@import './alternates_response';
+iframe {
+    height: 200px!important;
+}
+
+.wrap h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
+#wpbody-content {
+    padding: {
+        left: 15px;
+        right: 15px;
+    }
+}
+
+th[scope="row"]:empty {
+    display: none;
+}
+
+.banner-item,
+.services-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-item>*,
+.services-item>*,
+input,
+label {
+    margin-bottom: 25px!important;
+}
+
+.banner-item-delete,
+.services-item-delete {
+    align-self: flex-end;
+}
+
+.banner-item-img,
+.services-item-img {
+    background: no-repeat center;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
+}
+
+label {
+    display: block;
+}
+
+label input {
+    margin-bottom: 0!important;
+}
+
+.first-col {
+    width: 200px;
+}
+
+.autor_section {
+    padding: 15px;
+    border: 1px solid #b8b4b4;
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.bottom-line-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clr-field {
+    width: 100%;
+}
+
+.removeRow {
+    width: 10px;
+    min-width: 10px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 9;
+    top: 15px;
+    right: -25px;
+}
+
+@keyframes walk {
+    0% {
+        transform: translateX(0) scaleX(1);
+    }
+    49% {
+        transform: translateX(800px) scaleX(1);
+    }
+    50% {
+        transform: translateX(800px) scaleX(-1);
+    }
+    99% {
+        transform: translateX(0) scaleX(-1);
+    }
+    100% {
+        transform: translateX(0) scaleX(1);
+    }
+}

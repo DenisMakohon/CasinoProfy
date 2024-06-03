@@ -1,0 +1,46 @@
+.autor {
+    &-container {}
+    &-item {
+        margin-bottom: 25px;
+    }
+    &-photo {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        background: $gray-light;
+        margin: auto auto 25px;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &-name {
+        @include heading(3);
+        margin-bottom: 0;
+        @media screen and (max-width: $breakpoint-mobile) {
+            text-align: center;
+        }
+        &-container {
+            margin-bottom: 15px;
+        }
+    }
+    &-text {
+        &,
+        * {
+            @include tiny;
+        }
+        margin-bottom: 25px;
+    }
+    &-soc {
+        margin-left: 15px;
+        img {
+            width: 27px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                width: 25px;
+                vertical-align: text-bottom;
+            }
+        }
+    }
+}

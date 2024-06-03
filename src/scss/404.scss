@@ -1,0 +1,28 @@
+@import 'commons';
+.page404 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin: 0;
+    background: url(../images/404/404-decor-top.svg) top right no-repeat, url(../images/404/404-decor-bot.svg) bottom left no-repeat;
+    background-size: 50%;
+    @media screen and (max-width: $breakpoint-mobile) {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
+.title-404 {
+    margin-bottom: 34px;
+    span {}
+}
+
+h1 {
+    margin-bottom: 26px;
+    @media screen and (max-width: $breakpoint-mobile) {
+        @include heading(3);
+    }
+}
+
+footer {
+    margin-top: 0;
+}

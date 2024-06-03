@@ -1,0 +1,196 @@
+.topFourCasinos {
+    counter-reset: topFour;
+    margin-bottom: 80px;
+    @media screen and (max-width: $breakpoint-mobile) {
+        margin-bottom: 40px;
+    }
+    &-list {
+        margin-bottom: -30px;
+        &-item {
+            counter-increment: topFour;
+            @include shadow;
+            background: white;
+            padding: 20px;
+            margin-top: 113px;
+            margin-bottom: 30px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                padding: 16px;
+                margin-top: 55px;
+            }
+        }
+    }
+    &-links {
+        width: 100%;
+    }
+    &-logo {
+        position: relative;
+        span {
+            display: flex;
+        }
+        img {
+            border-radius: 50%;
+            height: auto;
+        }
+        margin: {
+            top: -133px;
+            left: auto;
+            right: auto;
+        }
+        width: 150px;
+        max-width: 67.5%;
+        border-radius: 50%;
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: 100px;
+            margin-top: -70px;
+        }
+        img {
+            border-radius: 50%;
+        }
+    }
+    &-rating {
+        width: 100%;
+        margin-top: -19px;
+        margin-bottom: 30px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-bottom: 17px;
+        }
+        .number {
+            position: relative;
+            display: block;
+            min-width: 24px;
+            min-height: 24px;
+            color: white!important;
+            font-weight: $black;
+            padding: 0 7px;
+            &:after {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: url(../images/shield_bg.svg) center no-repeat;
+                background-size: 100% 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                z-index: 1;
+            }
+            &:before {
+                @include paragraph($bold, $title-font);
+                content: counter(topFour);
+                position: relative;
+                z-index: 2;
+            }
+        }
+        .rating {
+            @include paragraph($bold, $title-font);
+            img {
+                vertical-align: sub;
+                margin-right: 4px;
+            }
+        }
+    }
+    &-review {
+        margin-bottom: 19px;
+        br {
+            display: none;
+        }
+    }
+    &-name {
+        @include heading(3);
+        font-size: 3.6rem;
+        margin-bottom: 10px;
+        span {
+            font: inherit!important;
+            color: inherit!important;
+        }
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-bottom: 20px;
+        }
+    }
+    &-bonus {
+        margin-bottom: 15px;
+        color: $primary-color;
+        width: 100%;
+        font-weight: $semi-bold;
+        @media screen and (max-width: $breakpoint-mobile) {
+            font-size: 1.8rem;
+        }
+        &-description {
+            @include bonus-description;
+            margin-bottom: 15px;
+        }
+    }
+    .btn {
+        &,
+        &-red-line {
+            padding: {
+                left: 20px;
+                right: 20px;
+            }
+        }
+    }
+    .btn-red {
+        width: 100%;
+    }
+    &-review,
+    &-name {
+        width: 100%;
+        &:hover {
+            color: $primary-color-hover;
+        }
+    }
+    &-location {
+        position: absolute;
+        border-radius: 0!important;
+        top: 0;
+        right: 0;
+        width: 24px!important;
+        max-width: 24px!important;
+    }
+}
+
+.best-choice-casino {
+    background: $primary-color;
+    padding: 20px 10px 10px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+    position: relative;
+    .attachment-full {
+        content: attr(data-bcc-icon);
+        position: absolute;
+        width: 50px;
+        top: 0;
+        right: 25px;
+        transform: translateY(-50%);
+        @media screen and (max-width: $breakpoint-mobile) {
+            right: 50px;
+        }
+    }
+    * {
+        color: white;
+    }
+    .topFourCasinos {
+        &-bonus-description {
+            margin-bottom: 0;
+            * {
+                color: $primary-text;
+            }
+        }
+        &-review,
+        &-name {
+            &:hover {
+                color: $primary-text;
+            }
+        }
+    }
+}
+
+.col-xl-3 .best-choice-casino {
+    .attachment-full {
+        width: 45px;
+        right: 20px;
+    }
+    .topFourCasinos-bonus {
+        margin-bottom: 0;
+    }
+}

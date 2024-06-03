@@ -1,0 +1,64 @@
+.steps {
+    counter-reset: step;
+    &-item {
+        counter-increment: step;
+        padding: 96px 20px 0;
+        background: white;
+        position: relative;
+        margin-bottom: 30px;
+        width: 100%;
+        @include shadow;
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding: 65px 15px 0;
+        }
+        >* {
+            position: relative;
+            z-index: 9;
+        }
+        &::before {
+            content: counter(step, decimal-leading-zero);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font: $bold 15rem $title-font;
+            color: $gray-light-2;
+            z-index: 5;
+            @media screen and (max-width: $breakpoint-mobile) {
+                font-size: 10rem;
+                top: 15px;
+                left: 15px;
+            }
+        }
+        h5 {
+            margin-bottom: 10px;
+        }
+        .text {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        &-img {
+            width: calc(100% + 40px);
+            height: 170px;
+            margin: 0 -20px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            @media screen and (max-width: $breakpoint-md) {
+                height: 200px;
+            }
+        }
+    }
+}
+
+.mainContent {
+    .steps-item .steps-item-title {
+        margin-bottom: 10px;
+        margin: 0 0 10px;
+        padding-left: 0px!important;
+        font: $semi-bold 1.8rem $title-font!important;
+        line-height: 1.2em!important;
+        &::before {
+            display: none;
+        }
+    }
+}

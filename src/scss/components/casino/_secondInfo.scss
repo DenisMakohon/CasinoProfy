@@ -1,0 +1,78 @@
+.secondInfo {
+    margin-bottom: 40px;
+    @media screen and (max-width: $breakpoint-lg) {
+        .smallCards {
+            margin-bottom: 0;
+        }
+    }
+    &-container {
+        @media screen and (max-width: $breakpoint-lg) {
+            margin-bottom: 20px!important;
+            >*:last-child .smallCards {
+                margin-bottom: 0!important;
+            }
+        }
+    }
+}
+
+.smallCards {
+    @include shadow;
+    padding: 20px;
+    @media screen and (max-width: $breakpoint-lg) {
+        margin-bottom: 20px;
+    }
+    &-title {
+        span {
+            padding-right: 15px;
+        }
+        margin-bottom: 10px;
+        img {
+            align-self: center;
+        }
+    }
+    &.platforms {
+        .grayBgBlock {
+            width: 42px;
+        }
+    }
+    &-btn-line {
+        margin-bottom: -10px;
+        margin-right: -10px;
+        >* {
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+        .btn-red-line {
+            padding: {
+                left: 20px;
+                right: 20px;
+            }
+            align-self: center;
+        }
+    }
+    &-link-icon {
+        position: relative;
+        transition: background $anim-speed, color $anim-speed;
+        &:hover {
+            background: $primary-color-hover;
+            color: white;
+            img {
+                opacity: 0;
+            }
+            img.hover {
+                opacity: 1;
+            }
+        }
+        img {
+            transition: opacity $anim-speed;
+            &.hover {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 9;
+                opacity: 0;
+            }
+        }
+    }
+}

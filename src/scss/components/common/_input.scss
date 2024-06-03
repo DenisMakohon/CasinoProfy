@@ -1,0 +1,192 @@
+@mixin input() {
+    @include paragraph;
+    border: 1px solid #E3E3E3;
+    outline: none;
+    padding: 12px 20px;
+    width: 100%;
+    height: 48px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    width: 100%;
+}
+
+textarea {
+    @include input;
+    height: 85px;
+}
+
+input {
+    &[type="search"],
+    &[type="text"],
+    &[type="email"] {
+        @include input;
+    }
+    &[type="submit"] {
+        height: 100%;
+        border: 0;
+        border: 0;
+        padding: 0;
+        bottom: 0;
+        right: 0;
+        outline: none;
+        border-radius: 50%;
+        font-size: 0;
+        background: white url(../images/navigation/search-red.svg) center no-repeat;
+        cursor: pointer;
+    }
+}
+
+.input-name {
+    @include heading(6);
+    line-height: 1.5em;
+    margin-bottom: 5px;
+    .required {
+        color: $primary-color;
+    }
+    &.form-title {
+        @include heading(4);
+    }
+}
+
+.comment-form {
+    position: relative;
+    margin-bottom: 72px;
+    input {
+        &[type="text"],
+        &[type="email"] {}
+        &[type="submit"] {
+            @include heading(6);
+            @include paragraph;
+            border-radius: 30px;
+            line-height: 1em;
+            background: $primary-color;
+            color: white;
+            padding: 12px;
+            width: 260px;
+            max-width: 100%;
+            transition: background $anim-speed;
+            &:hover {
+                background: $primary-color-hover;
+            }
+        }
+    }
+    .response {
+        @include heading(6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        z-index: 99;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity $anim-speed;
+        &.show {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+
+.error-msg {
+    color: $primary-color;
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity $anim-speed;
+    margin-bottom: 15px;
+    &.hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.np-form {
+    @include heading(5);
+    color: $primary-color!important;
+}
+
+.comment-preloader {
+    position: relative;
+    &:after {
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity $anim-speed;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+        background: rgba(255, 255, 255, 0.6) url(../images/filter_preloader.svg) center no-repeat;
+    }
+    &.show {
+        &:after {
+            pointer-events: all;
+            opacity: 1;
+        }
+    }
+}
+
+.form-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.7);
+    transition: opacity $anim-speed;
+    opacity: 0;
+    pointer-events: none;
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+    }
+    .comment-form {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        position: absolute;
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #555151;
+        top: 50%;
+        left: 50%;
+        z-index: 99;
+        max-width: calc(100% - 30px);
+        max-height: calc(100% - 140px);
+        width: 1200px;
+        overflow: auto;
+        transform: translate(-50%, -50%);
+        .form-title {
+            @include heading(2);
+        }
+    }
+}
+
+.close-form {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    z-index: 999;
+    cursor: pointer;
+    &:before,
+    &:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: $primary-color;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}

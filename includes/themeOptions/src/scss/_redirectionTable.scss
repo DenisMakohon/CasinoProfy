@@ -1,0 +1,43 @@
+.redirection_table {
+    counter-reset: section;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 1px solid $primary-color;
+    .table-row .num::before {
+        counter-increment: section;
+        content: counter(section);
+    }
+    .num {
+        width: 50px;
+        text-align: center;
+    }
+    .code {
+        text-align: center;
+        width: 200px;
+        &[class^='code_4'],
+        &[class^='code_5'] {
+            color: rgb(244, 53, 53);
+        }
+        &[class^='code_2'] {
+            color: rgb(8, 146, 8);
+        }
+        &[class^='code_3'] {
+            color: rgb(142, 123, 0);
+        }
+    }
+    .url {
+        width: 300px;
+    }
+    .r_url {
+        width: 700px;
+    }
+    &>div {
+        &:nth-child(even) {
+            background: $bg-color;
+        }
+        &>div {
+            padding: 15px;
+            border: #cfcdcd;
+        }
+    }
+}

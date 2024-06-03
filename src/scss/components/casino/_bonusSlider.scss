@@ -1,0 +1,76 @@
+.bonusSlider {
+    margin-bottom: 40px;
+    .control-title {
+        @include heading(5);
+        padding: 0 20px 10px;
+        color: #828282;
+        border-bottom: 4px solid #BDBDBD;
+        cursor: pointer;
+        transition: color $anim-speed, border $anim-speed;
+        @media screen and (max-width: $breakpoint-mobile) {
+            padding: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+            @include shadow;
+        }
+        &.active {
+            color: $primary-color;
+            border-color: $primary-color;
+        }
+    }
+    &-control {
+        margin-bottom: 20px;
+        @media screen and (max-width: $breakpoint-mobile) {
+            margin-bottom: 0;
+        }
+    }
+    &-item {
+        padding: 40px 80px;
+        background: $primary-color;
+        @media screen and (max-width: $breakpoint-md) {
+            padding: 15px;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        &-description {
+            @include bonus-description;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 10px;
+            line-height: 1.2em;
+            background: transparent;
+            padding: 0;
+            * {
+                color: white;
+            }
+            a {
+                text-decoration: underline;
+                &:hover {
+                    color: $primary-text;
+                }
+            }
+        }
+    }
+    &-text {
+        @include heading(3);
+        padding-right: 40px;
+        margin-bottom: 0;
+        @media screen and (max-width: $breakpoint-md) {
+            padding-right: 0;
+            margin-bottom: 20px;
+        }
+        * {
+            color: white;
+        }
+    }
+    .btn-white {
+        flex-shrink: 0;
+        @media screen and (max-width: $breakpoint-md) {
+            margin: 0 auto;
+            width: 268px;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+.comments {
+    &-item {
+        margin-bottom: 50px;
+        &-name {
+            font: $bold 2rem $title-font;
+            margin-right: 10px;
+        }
+        &-date,
+        &-content {
+            font: $regular 2rem $paragraph-font;
+            color: #7D7D7D;
+        }
+        &-content {
+            color: $primary-text;
+            margin-bottom: 20px;
+            margin-top: 5px;
+        }
+        &-name,
+        &-date,
+        &-content {
+            line-height: 1.5em;
+        }
+        &-reply {
+            font: $bold 1.6rem $title-font;
+            color: #7D7D7D;
+            margin-right: 17px;
+            cursor: pointer;
+            img {
+                margin-right: 10px;
+            }
+        }
+        &-rating {
+            margin-top: 5px;
+            margin-bottom: 0;
+            .user-rating-item {
+                cursor: auto;
+            }
+        }
+        &-child-container {
+            margin-top: 25px;
+            .comments {
+                &-item {
+                    margin-left: 8%;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+
+.answersControl {
+    @include heading(6);
+    color: #7D7D7D;
+    &>* {
+        cursor: pointer;
+        &::before {
+            content: '';
+            display: inline-block;
+            margin: {
+                right: 10px;
+            }
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 8px 8px;
+            border-color: transparent transparent #7d7d7d transparent;
+            transition: transform $anim-speed;
+            transform-origin: center;
+        }
+    }
+    &-more {
+        &::before {
+            transform-origin: center;
+            transform: rotate(180deg);
+        }
+    }
+    &-hide.show::before {
+        transform: rotate(180deg);
+    }
+}
+
+.disable {
+    opacity: .5;
+    pointer-events: none;
+}

@@ -1,0 +1,17 @@
+@import 'commons';
+@import './components/common/breadcrumbs';
+@import './components/common/mainContent';
+@import './components/common/topFourCasinos';
+@import './components/blog/post';
+@import './components/games/game';
+@import './components/games/gameInfo';
+@import './components/common/faq';
+@import './components/providers/fourProviders';
+@import './components/category/things';
+@import './components/casino/bonusSlider';
+@import './components/gamecategory/gameFeatures';
+@import './components/category/steps';
+@import './components/bonus/plusesMinuses';
+section:first-of-type {
+    margin: 0 auto;
+}

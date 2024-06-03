@@ -1,0 +1,79 @@
+.characteristicsOfTheCasino {
+    .text {
+        margin-bottom: 10px;
+    }
+    .characteristics {
+        &-open {
+            position: relative;
+            text-align: center;
+            margin: 21px 0;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 100%;
+                height: 4px;
+                background: $gray-light-2;
+                z-index: 5;
+            }
+            img {
+                margin: 0 auto {
+                    left: 5px;
+                }
+                display: inline-block;
+                position: relative;
+                z-index: 9;
+                border-radius: 50%;
+                transition: transform $anim-speed;
+                transform-origin: center;
+                vertical-align: middle;
+                transform: rotate(180deg);
+            }
+            .btn-red-line {
+                position: relative;
+                z-index: 6;
+            }
+        }
+        &-content {
+            @include shadow;
+            padding: 40px;
+            @media screen and (max-width: $breakpoint-mobile) {
+                padding: 16px 0;
+            }
+        }
+        &-list {
+            @media screen and (max-width: $breakpoint-md) {
+                margin-bottom: 20px;
+            }
+            li {
+                display: inline-block;
+                width: 49%;
+                margin-bottom: 30px;
+                padding-right: 10px;
+                @media screen and (max-width: $breakpoint-mobile) {
+                    width: 100%;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-currencies {
+            width: 100%;
+            .grayBgBlock {
+                font-weight: $regular;
+            }
+        }
+        &-lg {
+            margin-bottom: 10px;
+            img {
+                width: 40px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

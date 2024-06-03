@@ -1,0 +1,87 @@
+.topCasino {
+    &Bonus {
+        .topCasino {
+            &-name {
+                line-height: 1.22em !important;
+                margin-top: 15px;
+            }
+            &-row {
+                @media screen and (max-width: $breakpoint-md) {
+                    width: 50%;
+                }
+                @media screen and (max-width: $breakpoint-mobile) {
+                    width: 100%;
+                }
+                &-container {
+                    >* {
+                        &:nth-child(2) {
+                            width: 10.3%;
+                            @media screen and (max-width: $breakpoint-md) {
+                                width: 50%;
+                                order: 1;
+                                padding: 15px 15px 0 15px;
+                            }
+                        }
+                        &:nth-child(3) {
+                            width: 44%;
+                            @media screen and (max-width: $breakpoint-md) {
+                                width: 100%;
+                                order: 3;
+                                padding-left: 0;
+                                padding-right: 0;
+                            }
+                        }
+                        &:nth-child(4) {
+                            width: 10.3%;
+                            @media screen and (max-width: $breakpoint-md) {
+                                order: 2;
+                                width: 50%;
+                            }
+                        }
+                        &:nth-child(5) {
+                            width: 15.5%;
+                            @media screen and (max-width: $breakpoint-md) {
+                                display: none!important;
+                            }
+                            &::after {
+                                @media screen and (max-width: $breakpoint-md) {
+                                    display: none;
+                                }
+                            }
+                        }
+                        &:nth-child(6) {
+                            width: 15.387%;
+                            @media screen and (max-width: $breakpoint-md) {
+                                width: 100%;
+                                background: transparent;
+                                align-self: stretch;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                            }
+                            &::after {
+                                display: none;
+                            }
+                        }
+                        &:nth-child(7) {
+                            width: 16%;
+                        }
+                        &:nth-child(7) {
+                            order: 99;
+                            &:after {
+                                display: none;
+                            }
+                        }
+                        .btn {
+                            width: auto;
+                            min-width: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-licences a {
+        font: inherit!important;
+    }
+}
